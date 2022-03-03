@@ -1,0 +1,28 @@
+buildarch=4
+
+pkgname=NeoGeoMVS-MiSTer
+pkgver=20220228
+pkgrel=1
+pkgdesc="NeoGeo MVS core for MOnSieurFPGA, furrtek/blackwine"
+arch=('any')
+url='https://github.com/MOnSieurFPGA/NeoGeo_MiSTer'
+license=('GPL3')
+source=('git+https://github.com/MOnSieurFPGA/NeoGeo_MiSTer.git')
+sha256sums=('SKIP')
+_gitfolder="NeoGeo_MiSTer"
+
+pkgver() {
+  date +%F | tr -d '-'
+}
+
+package() {
+
+  mkdir -p "${pkgdir}/media/fat/_Arcade/_NeoGeo MVS"
+  install ${srcdir}/${_gitfolder}/releases/Arcade-NeoGeo-MVS_20220218.rbf  -Dt "${pkgdir}"/media/fat/_Arcade/cores/
+  install ${srcdir}/${_gitfolder}/releases/*.mra -Dt "${pkgdir}/media/fat/_Arcade/_NeoGeo MVS"
+
+  mkdir -p "${pkgdir}/media/fat/_Arcade/_NeoGeo MVS/_Alternatives"
+  cp -r ${srcdir}/${_gitfolder}/releases/_alternatives/* "${pkgdir}/media/fat/_Arcade/_NeoGeo MVS/_Alternatives"
+}
+
+

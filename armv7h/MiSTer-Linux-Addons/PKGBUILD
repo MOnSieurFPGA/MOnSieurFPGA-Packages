@@ -1,0 +1,25 @@
+buildarch=4
+
+pkgname=MiSTer-Linux-Addons
+pkgver=20220227
+pkgrel=1
+pkgdesc="MiSTerFPGA Linux Addon Utils"
+arch=('any')
+url='https://github.com/MiSTer-devel/Linux_Image_creator_MiSTer'
+license=('GPL3')
+source=('https://raw.githubusercontent.com/MiSTer-devel/Linux_Image_creator_MiSTer/master/addon.tar')
+sha256sums=('SKIP')
+
+pkgver() {
+  date +%F | tr -d '-'
+}
+
+package() {
+
+  tar xpvf addon.tar
+  mkdir -p "${pkgdir}"/usr/bin
+  mkdir -p "${pkgdir}"/usr/sbin
+  cp -r ${srcdir}/${_gitfolder}/usr/bin/* "${pkgdir}"/usr/bin/
+  cp -r ${srcdir}/${_gitfolder}/usr/sbin/* "${pkgdir}"/usr/sbin/
+
+}
