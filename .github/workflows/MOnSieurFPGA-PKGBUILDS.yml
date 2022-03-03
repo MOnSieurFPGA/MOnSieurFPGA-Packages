@@ -1,0 +1,108 @@
+name: MOnSiuerFPGA Package Database
+
+on:
+  schedule:
+  - cron:  "59 * * * *"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Install Dependencies
+      run: |
+        sudo apt install libarchive-dev libarchive-tools build-essential python3 python3-pip python3-setuptools python3-wheel ninja-build
+        sudo pip3 install meson
+        wget https://sources.archlinux.org/other/pacman/pacman-6.0.1.tar.xz
+        tar -xJf pacman-*.tar.xz
+        cd pacman-6.0.1
+        sudo meson build
+        sudo ninja -C build
+        sudo ninja -C build install
+        cd ..
+    - name: MOnSieurFPGA-Packages
+      run: |
+        mkdir MOnSieurFPGA-Packages
+        mkdir MiSTer-Devel-Bin
+        cd MiSTer-Devel-Bin
+        wget https://raw.githubusercontent.com/MOnSieurFPGA/MOnSieurFPGA-Packages/main/armv7h/MiSTer-Devel-Bin/MiSTer.service
+        wget https://raw.githubusercontent.com/MOnSieurFPGA/MOnSieurFPGA-Packages/main/armv7h/MiSTer-Devel-Bin/PKGBUILD
+        makepkg -f
+        ls -la
+        cd ../
+        mkdir MiSTer-Devel-Menu
+        cd MiSTer-Devel-Menu
+        wget https://raw.githubusercontent.com/MOnSieurFPGA/MOnSieurFPGA-Packages/main/armv7h/MiSTer-Devel-Menu/PKGBUILD
+        makepkg -f
+        ls -la
+        cd ../
+        mkdir MiSTer-Linux-Addons
+        cd MiSTer-Linux-Addons
+        wget https://raw.githubusercontent.com/MOnSieurFPGA/MOnSieurFPGA-Packages/main/armv7h/MiSTer-Linux-Addons/PKGBUILD
+        makepkg -f
+        ls -la
+        cd ../
+        mkdir MiSTer-Devel-Support
+        cd MiSTer-Devel-Support
+        wget https://raw.githubusercontent.com/MOnSieurFPGA/MOnSieurFPGA-Packages/main/armv7h/MiSTer-Devel-Support/PKGBUILD
+        makepkg -f
+        ls -la
+        cd ../
+        mkdir MiSTer-Devel-Cheats
+        cd MiSTer-Devel-Cheats
+        wget https://raw.githubusercontent.com/MOnSieurFPGA/MOnSieurFPGA-Packages/main/armv7h/MiSTer-Devel-Cheats/PKGBUILD
+        makepkg -f
+        ls -la
+        cd ../
+        mkdir MiSTer-Devel-Arcade
+        cd MiSTer-Devel-Arcade
+        wget https://raw.githubusercontent.com/MOnSieurFPGA/MOnSieurFPGA-Packages/main/armv7h/MiSTer-Devel-Arcade/PKGBUILD
+        makepkg -f
+        ls -la
+        cd ../
+        mkdir MiSTer-Devel-Computer
+        cd MiSTer-Devel-Computer
+        wget https://raw.githubusercontent.com/MOnSieurFPGA/MOnSieurFPGA-Packages/main/armv7h/MiSTer-Devel-Computer/PKGBUILD
+        makepkg -f
+        ls -la
+        cd ../
+        mkdir MiSTer-Devel-Console
+        cd MiSTer-Devel-Console
+        wget https://raw.githubusercontent.com/MOnSieurFPGA/MOnSieurFPGA-Packages/main/armv7h/MiSTer-Devel-Console/PKGBUILD
+        makepkg -f
+        ls -la
+        cd ../
+        mkdir PSX-MiSTer-Devel-Unstable
+        cd PSX-MiSTer-Devel-Unstable
+        wget https://raw.githubusercontent.com/MOnSieurFPGA/MOnSieurFPGA-Packages/main/armv7h/PSX-MiSTer-Devel-Unstable/PKGBUILD
+        makepkg -f
+        ls -la
+        cd ../
+        mkdir NeoGeoMVS-MiSTer
+        cd NeoGeoMVS-MiSTer
+        wget https://raw.githubusercontent.com/MOnSieurFPGA/MOnSieurFPGA-Packages/main/armv7h/NeoGeoMVS-MOnSieur/PKGBUILD
+        makepkg -f
+        ls -la
+        cd ../
+        mkdir JTFPGA-MiSTer
+        cd JTFPGA-MiSTer
+        wget https://raw.githubusercontent.com/MOnSieurFPGA/MOnSieurFPGA-Packages/main/armv7h/JTFPGA-MiSTer/PKGBUILD
+        makepkg -f
+        ls -la
+        cd ../MOnSieurFPGA-Packages
+        repo-add monsieur.db.tar.gz
+        rm monsieur.db
+        cp monsieur.db.tar.gz monsieur.db
+        rm monsieur.files
+        cp monsieur.file.tar.gz monsieur.files
+        ls -la
+        mv monsieur* ../
+        mv *.tar.gz ../
+        ls -la
+        cd ../
+        ls -la
+        git config --global user.email "atracseventeen@gmail.com"
+        git config --global user.name "atrac17"
