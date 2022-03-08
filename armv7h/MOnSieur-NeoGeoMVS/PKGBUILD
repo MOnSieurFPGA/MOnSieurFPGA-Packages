@@ -1,6 +1,6 @@
 buildarch=4
 
-pkgname=NeoGeoMVS-MiSTer
+pkgname=MOnSieur-NeoGeoMVS
 pkgver=20220228
 pkgrel=1
 pkgdesc="NeoGeo MVS core for MOnSieurFPGA, furrtek/blackwine"
@@ -9,7 +9,7 @@ url='https://github.com/MOnSieurFPGA/NeoGeo_MiSTer'
 license=('GPL3')
 source=('git+https://github.com/MOnSieurFPGA/NeoGeo_MiSTer.git')
 sha256sums=('SKIP')
-_gitfolder="NeoGeo_MiSTer"
+_gitfolder="NeoGeo_MOnSieur"
 
 pkgver() {
   date +%F | tr -d '-'

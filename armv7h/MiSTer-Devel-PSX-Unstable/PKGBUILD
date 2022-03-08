@@ -1,0 +1,23 @@
+buildarch=4
+
+pkgname=MiSTer-Devel-PSX-Unstable
+pkgver=20220301
+pkgrel=1
+pkgdesc="PlayStation core for MiSTerFPGA, FPGAzumSpass (Robert Peip)"
+arch=('any')
+url='https://github.com/MiSTer-unstable-nightlies/PSX_MiSTer/releases/tag/unstable-builds'
+license=('GPL2')
+_gitfolder="MiSTer-Devel-PSX"
+
+pkgver() {
+  date +%F | tr -d '-'
+}
+
+package() {
+
+
+  mkdir -p "${pkgdir}/media/fat/_Console/_Unstable Builds"
+
+
+  install ${srcdir}/PSX_unstable_202203*.rbf -Dt "${pkgdir}/media/fat/_Console/_Unstable Builds"
+}
