@@ -56,7 +56,7 @@ package() {
   cp -r ${srcdir}/${_gitfolder}/_Arcade/_alternatives/"_1941 Counter Attack"/"1941  Counter Attack -World-.mra" "${pkgdir}/media/fat/_Arcade/_Capcom/_CP System/_Alternatives/1941 Counter Attack (World).mra"
 
   mkdir -p "${pkgdir}/media/fat/_Arcade/_Capcom/_CP System Changer"
-  cp ${srcdir}/${_gitfolder}/_Arcade/alternatives/_Street\ Fighter\ Alpha\ Warriors'\ Dreams/Street\ Fighter\ Zero\ (CPS\ Changer,\ Japan\ 951020).mra "${pkgdir}/media/fat/_Arcade/_Capcom/_CP System/Street Fighter Zero (CPS Changer, Japan 951020).mra"
+  cp ${srcdir}/${_gitfolder}/_Arcade/alternatives/_Street\ Fighter\ Alpha\ Warriors\'\ Dreams/Street\ Fighter\ Zero\ (CPS\ Changer,\ Japan\ 951020).mra "${pkgdir}/media/fat/_Arcade/_Capcom/_CP System/Street Fighter Zero (CPS Changer, Japan 951020).mra"
 
   mkdir -p "${pkgdir}/media/fat/_Arcade/_Capcom/_CP System Dash"
   install ${srcdir}/${_gitfolder}/_Arcade/cores/jtcps15*.rbf -Dt "${pkgdir}"/media/fat/_Arcade/cores/
