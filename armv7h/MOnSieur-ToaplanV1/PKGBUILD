@@ -1,0 +1,26 @@
+buildarch=4
+
+pkgname=MOnSieur-ToaplanV1
+pkgver=20220312
+pkgrel=1
+pkgdesc="Toaplan V1 core for MOnSieurFPGA, va7deo (Darren)"
+arch=('any')
+url='https://github.com/MOnSieurFPGA/MOnSieurFPGA-ToaplanV1'
+license=('GPL3')
+source=('git+https://github.com/MOnSieurFPGA/MOnSieurFPGA-ToaplanV1.git')
+sha256sums=('SKIP')
+_gitfolder="MOnSieurFPGA-ToaplanV1"
+
+pkgver() {
+  date +%F | tr -d '-'
+}
+
+package() {
+
+  mkdir -p "${pkgdir}/media/fat/_Arcade/_Toaplan V1"
+  install ${srcdir}/${_gitfolder}/releases/toaplan1_20220320.rbf -Dt "${pkgdir}"/media/fat/_Arcade/cores/
+  install ${srcdir}/${_gitfolder}/releases/*.mra -Dt "${pkgdir}/media/fat/_Arcade/_Toaplan V1"
+
+  mkdir -p "${pkgdir}/media/fat/_Arcade/_Toaplan V1/_Alternatives"
+  cp -r ${srcdir}/${_gitfolder}/releases/_alternatives/* "${pkgdir}/media/fat/_Arcade/_Toaplan V1/_Alternatives"
+}

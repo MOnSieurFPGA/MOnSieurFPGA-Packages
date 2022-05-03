@@ -1,0 +1,45 @@
+buildarch=4
+
+pkgname=JTFPGA-CPS
+pkgver=20220502
+pkgrel=1
+pkgdesc="JTFPGA CPS cores for MiSTerFPGA"
+arch=('any')
+url='https://github.com/jotego/jtpremium'
+license=('GPL3')
+source=('git+https://github.com/jotego/jtpremium')
+sha256sums=('SKIP')
+_gitfolder="jtpremium"
+
+pkgver() {
+  date +%F | tr -d '-'
+}
+
+package() {
+
+  mkdir -p "${pkgdir}/media/fat/_Arcade/_Capcom/_CP System"
+  install ${srcdir}/${_gitfolder}/_Arcade/cores/jtcps1*.rbf -Dt "${pkgdir}"/media/fat/_Arcade/cores/
+  cp ${srcdir}/${_gitfolder}/_Arcade/"1941  Counter Attack -World 900227-.mra" "${pkgdir}/media/fat/_Arcade/_Capcom/_CP System/1941 Counter Attack (World 900227).mra"
+#  install ${srcdir}/${_gitfolder}/_Arcade/"1941  Counter Attack -World 900227-.mra" -Dt "${pkgdir}/media/fat/_Arcade/_Capcom/_CP System"
+#  mv "${pkgdir}/media/fat/_Arcade/_Capcom/_CP System/1941  Counter Attack -World 900227-.mra" "${pkgdir}/media/fat/_Arcade/_Capcom/_CP System/1941 Counter Attack (World 900227).mra"
+
+  mkdir -p "${pkgdir}/media/fat/_Arcade/_Capcom/_CP System/_Alternatives"
+  cp -r ${srcdir}/${_gitfolder}/_Arcade/_alternatives/"_1941 Counter Attack"/"1941  Counter Attack -Japan-.mra" "${pkgdir}/media/fat/_Arcade/_Capcom/_CP System/_Alternatives/1941 Counter Attack (Japan).mra"
+  cp -r ${srcdir}/${_gitfolder}/_Arcade/_alternatives/"_1941 Counter Attack"/"1941  Counter Attack -USA 900227-.mra" "${pkgdir}/media/fat/_Arcade/_Capcom/_CP System/_Alternatives/1941 Counter Attack (USA 900227).mra"
+  cp -r ${srcdir}/${_gitfolder}/_Arcade/_alternatives/"_1941 Counter Attack"/"1941  Counter Attack -World-.mra" "${pkgdir}/media/fat/_Arcade/_Capcom/_CP System/_Alternatives/1941 Counter Attack (World).mra"
+
+  mkdir -p "${pkgdir}/media/fat/_Arcade/_Capcom/_CP System Dash"
+  install ${srcdir}/${_gitfolder}/_Arcade/cores/jtcps15*.rbf -Dt "${pkgdir}"/media/fat/_Arcade/cores/
+  install ${srcdir}/${_gitfolder}/_Arcade/"Cadillacs and Dinosaurs (World 930201).mra" -Dt "${pkgdir}/media/fat/_Arcade/_Capcom/_CP System Dash"
+  install ${srcdir}/${_gitfolder}/_Arcade/"Muscle Bomber Duo Ultimate Team Battle (World 931206).mra" -Dt "${pkgdir}/media/fat/_Arcade/_Capcom/_CP System Dash"
+  install ${srcdir}/${_gitfolder}/_Arcade/"Saturday Night Slam Masters (World 930713).mra" -Dt "${pkgdir}/media/fat/_Arcade/_Capcom/_CP System Dash"
+  install ${srcdir}/${_gitfolder}/_Arcade/"The Punisher (World 930422).mra" -Dt "${pkgdir}/media/fat/_Arcade/_Capcom/_CP System Dash"
+  install ${srcdir}/${_gitfolder}/_Arcade/"Warriors of Fate (World 921031).mra" -Dt "${pkgdir}/media/fat/_Arcade/_Capcom/_CP System Dash"
+
+  mkdir -p "${pkgdir}/media/fat/_Arcade/_Capcom/_CP System Dash/_Alternatives"
+  cp -r ${srcdir}/${_gitfolder}/_Arcade/_alternatives/"_Cadillacs and Dinosaurs" "${pkgdir}/media/fat/_Arcade/_Capcom/_CP System Dash/_Alternatives"
+  cp -r ${srcdir}/${_gitfolder}/_Arcade/_alternatives/"_Muscle Bomber Duo" "${pkgdir}/media/fat/_Arcade/_Capcom/_CP System Dash/_Alternatives"
+  cp -r ${srcdir}/${_gitfolder}/_Arcade/_alternatives/"_Saturday Night Slam Masters" "${pkgdir}/media/fat/_Arcade/_Capcom/_CP System Dash/_Alternatives"
+  cp -r ${srcdir}/${_gitfolder}/_Arcade/_alternatives/"_The Punisher" "${pkgdir}/media/fat/_Arcade/_Capcom/_CP System Dash/_Alternatives"
+  cp -r ${srcdir}/${_gitfolder}/_Arcade/_alternatives/"_Warriors of Fate" "${pkgdir}/media/fat/_Arcade/_Capcom/_CP System Dash/_Alternatives"
+}

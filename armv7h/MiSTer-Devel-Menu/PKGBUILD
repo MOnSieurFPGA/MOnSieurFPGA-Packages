@@ -1,0 +1,28 @@
+buildarch=4
+
+pkgname=MiSTer-Devel-Menu
+pkgver=88.gc125fdbe
+pkgrel=1
+pkgdesc="MiSTerFPGA distribution package"
+arch=('any')
+url='https://github.com/MiSTer-devel/Distribution_MiSTer'
+license=('GPL3')
+source=('git+https://github.com/MiSTer-devel/Distribution_MiSTer.git#branch=main')
+sha256sums=('SKIP')
+_gitfolder="Distribution_MiSTer"
+
+pkgver() {
+  cd "${srcdir}/${_gitfolder}"
+  # there are no tags in this repo, so let's just make make one for the first commit
+  git tag -f "firstcommit" 5568130ab4f7e6b5780ffa65549b0a7c49d4e770
+  # and then use number of commits as a version
+  git describe --tags --match firstcommit | sed 's/firstcommit.//g;s/-/./g'
+}
+
+package() {
+
+
+  install ${srcdir}/${_gitfolder}/menu.rbf  -Dt "${pkgdir}"/boot/
+  install ${srcdir}/${_gitfolder}/menu.rbf  -Dt "${pkgdir}"/media/fat/
+  
+}

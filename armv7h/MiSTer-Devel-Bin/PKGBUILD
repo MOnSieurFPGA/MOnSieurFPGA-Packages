@@ -1,0 +1,33 @@
+# Userspace binary that manages MiSTer on the ARM side
+# Original Author: Alexandru M Stan <alex@hypertriangle.com>
+# Modified and Maintained by DJ Hard Rich / Atrac17
+
+# This package is repackaged from the files at
+# https://github.com/MiSTer-devel/Main_MiSTer/tree/master/releases .
+# This is why it has a -Bin suffix, instead of compiling
+# each release.
+
+buildarch=4
+
+pkgname=MiSTer-Devel-Bin
+pkgver=20220224
+pkgrel=1
+pkgdesc="Userspace binary that manages MiSTer on the ARM side, prebuilt"
+arch=('any')
+provides=('mister')
+conflicts=('mister')
+url='https://github.com/MiSTer-devel/Main_MiSTer/'
+license=('GPL')
+optdepends=('MiSTer-Linux-Addons' 'MiSTer-Devel-Menu' 'MiSTer-Devel-Support')
+source=("https://github.com/MiSTer-devel/Main_MiSTer/raw/master/releases/MiSTer_${pkgver}"
+        'MiSTer.service')
+sha256sums=('b910469bfebbc894c0f0672b75afbe761efefde297c5d5ea05df940a40a27d10'
+            '6f9a9a14420078c5fc5afeab364aba4a0be55992e95b897b913ed76e4fbe2971')
+
+package() {
+
+  install MiSTer_${pkgver} -m744 -D "${pkgdir}"/usr/bin/MiSTer
+  install MiSTer.service -Dt "${pkgdir}"/usr/lib/systemd/system
+
+
+}
