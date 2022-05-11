@@ -93,12 +93,6 @@ jobs:
         makepkg -f
         cp MiSTer-Devel-Console* ../MOnSieurFPGA-Packages
         cd ../
-        mkdir MiSTer-Devel-PSX-Unstable
-        cd MiSTer-Devel-PSX-Unstable
-        wget https://raw.githubusercontent.com/MOnSieurFPGA/MOnSieurFPGA-Packages/main/armv7h/MiSTer-Devel-PSX-Unstable/PKGBUILD
-        makepkg -f
-        cp MiSTer-Devel-PSX-Unstable* ../MOnSieurFPGA-Packages
-        cd ../
         mkdir MOnSieur-NeoGeoMVS
         cd MOnSieur-NeoGeoMVS
         wget https://raw.githubusercontent.com/MOnSieurFPGA/MOnSieurFPGA-Packages/main/armv7h/MOnSieur-NeoGeoMVS/PKGBUILD
@@ -156,7 +150,6 @@ jobs:
         rm -rf MOnSieur-NeoGeoMVS
         rm -rf MOnSieur-ToaplanV1
         rm -rf MOnSieur-Nichibutsu-68000
-        rm -rf MiSTer-Devel-PSX-Unstable
         rm -rf JTFPGA-CPS
         rm -rf JTFPGA-CPS2
         rm -rf JTFPGA-MiSTer
