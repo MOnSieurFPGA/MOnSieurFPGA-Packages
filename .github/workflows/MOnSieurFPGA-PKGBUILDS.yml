@@ -111,6 +111,12 @@ jobs:
         makepkg -f
         cp MOnSieur-Nichibutsu-68000* ../MOnSieurFPGA-Packages
         cd ../
+        mkdir MOnSieur-Nichibutsu-68000-2
+        cd MOnSieur-Nichibutsu-68000-2
+        wget https://raw.githubusercontent.com/MOnSieurFPGA/MOnSieurFPGA-Packages/main/armv7h/MOnSieur-Nichibutsu-68000-2/PKGBUILD
+        makepkg -f
+        cp MOnSieur-Nichibutsu-68000-2* ../MOnSieurFPGA-Packages
+        cd ../
         mkdir JTFPGA-CPS
         cd JTFPGA-CPS
         wget https://raw.githubusercontent.com/MOnSieurFPGA/MOnSieurFPGA-Packages/main/armv7h/JTFPGA-CPS/PKGBUILD
@@ -150,6 +156,7 @@ jobs:
         rm -rf MOnSieur-NeoGeoMVS
         rm -rf MOnSieur-ToaplanV1
         rm -rf MOnSieur-Nichibutsu-68000
+        rm -rf MOnSieur-Nichibutsu-68000-2
         rm -rf JTFPGA-CPS
         rm -rf JTFPGA-CPS2
         rm -rf JTFPGA-MiSTer
