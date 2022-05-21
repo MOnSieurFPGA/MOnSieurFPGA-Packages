@@ -17,10 +17,8 @@ pkgver() {
 
 package() {
 
-  install -p "${pkgdir}/media/fat/_Arcade/_Nichibutsu 68000"
   install ${srcdir}/${_gitfolder}/releases/terracresta_20220430.rbf -Dt "${pkgdir}"/media/fat/_Arcade/cores/
   install ${srcdir}/${_gitfolder}/releases/*.mra -Dt "${pkgdir}/media/fat/_Arcade/_Nichibutsu 68000"
 
-  install -p "${pkgdir}/media/fat/_Arcade/_Nichibutsu 68000/_Alternatives"
   cp -r ${srcdir}/${_gitfolder}/releases/_alternatives/* "${pkgdir}/media/fat/_Arcade/_Nichibutsu 68000/_Alternatives"
 }
