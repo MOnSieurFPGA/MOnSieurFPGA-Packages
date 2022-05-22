@@ -17,9 +17,8 @@ pkgver() {
 
 package() {
 
-  mkdir -p "${pkgdir}/media/fat/_Arcade/_Nichibutsu 68000/_Alternatives"
   install ${srcdir}/${_gitfolder}/releases/armedf_20220520.rbf -Dt "${pkgdir}"/media/fat/_Arcade/cores/
   install ${srcdir}/${_gitfolder}/releases/*.mra -Dt "${pkgdir}/media/fat/_Arcade/_Nichibutsu 68000"
 
-  cp -r ${srcdir}/${_gitfolder}/releases/_Alternatives/* "${pkgdir}/media/fat/_Arcade/_Nichibutsu 68000/_Alternatives"
+  cp -r ${srcdir}/${_gitfolder}/releases/_alternatives/* "${pkgdir}/media/fat/_Arcade/_Nichibutsu 68000/_Alternatives"
 }
