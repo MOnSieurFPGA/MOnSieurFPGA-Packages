@@ -18,7 +18,7 @@ pkgver() {
 package() {
 
   mkdir -p "${pkgdir}/media/fat/_Arcade/_Toaplan V1"
-  install ${srcdir}/${_gitfolder}/releases/toaplan1_20220320.rbf -Dt "${pkgdir}"/media/fat/_Arcade/cores/
+  install ${srcdir}/${_gitfolder}/releases/toaplan1_20220516.rbf -Dt "${pkgdir}"/media/fat/_Arcade/cores/
   install ${srcdir}/${_gitfolder}/releases/*.mra -Dt "${pkgdir}/media/fat/_Arcade/_Toaplan V1"
 
   mkdir -p "${pkgdir}/media/fat/_Arcade/_Toaplan V1/_Alternatives"
