@@ -21,5 +21,5 @@ package() {
   install ${srcdir}/${_gitfolder}/_Arcade/*.mra -Dt "${pkgdir}/media/fat/_Arcade/_Coin-Op Collection"
 
   mkdir -p "${pkgdir}/media/fat/_Arcade/_Coin-Op Collection/_Alternatives"
-  cp -r ${srcdir}/${_gitfolder}/_Arcade/_alternatives/* "${pkgdir}/media/fat/_Arcade/_Alternatives"
+  cp -r ${srcdir}/${_gitfolder}/_Arcade/_alternatives/* "${pkgdir}/media/fat/_Arcade/_Coin-Op Collection/_Alternatives"
 }
