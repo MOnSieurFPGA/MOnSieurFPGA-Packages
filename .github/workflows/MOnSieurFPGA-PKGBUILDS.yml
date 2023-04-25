@@ -117,18 +117,6 @@ jobs:
         makepkg -f
         cp MOnSieur-Nichibutsu-68000-2* ../MOnSieurFPGA-Packages
         cd ../
-        mkdir JTFPGA-CPS
-        cd JTFPGA-CPS
-        wget https://raw.githubusercontent.com/MOnSieurFPGA/MOnSieurFPGA-Packages/main/armv7h/JTFPGA-CPS/PKGBUILD
-        makepkg -f
-        cp JTFPGA-CPS* ../MOnSieurFPGA-Packages
-        cd ../
-        mkdir JTFPGA-CPS2
-        cd JTFPGA-CPS2
-        wget https://raw.githubusercontent.com/MOnSieurFPGA/MOnSieurFPGA-Packages/main/armv7h/JTFPGA-CPS2/PKGBUILD
-        makepkg -f
-        cp JTFPGA-CPS2* ../MOnSieurFPGA-Packages
-        cd ../
         mkdir JTFPGA-MiSTer
         cd JTFPGA-MiSTer
         wget https://raw.githubusercontent.com/MOnSieurFPGA/MOnSieurFPGA-Packages/main/armv7h/JTFPGA-MiSTer/PKGBUILD
@@ -157,8 +145,6 @@ jobs:
         rm -rf MOnSieur-ToaplanV1
         rm -rf MOnSieur-Nichibutsu-68000
         rm -rf MOnSieur-Nichibutsu-68000-2
-        rm -rf JTFPGA-CPS
-        rm -rf JTFPGA-CPS2
         rm -rf JTFPGA-MiSTer
         cd MOnSieurFPGA-Packages
         gh auth login --with-token < ${HOME}/.jack_cates
