@@ -16,9 +16,8 @@ pkgver() {
 }
 
 package() {
-
   mkdir -p "${pkgdir}/media/fat/_Arcade/_NeoGeo MVS"
-  install ${srcdir}/${_gitfolder}/releases/Arcade-NeoGeo-MVS_20220218.rbf -Dt "${pkgdir}"/media/fat/_Arcade/cores/
+  install ${srcdir}/${_gitfolder}/releases/Arcade-NeoGeo-MVS_20220218.rbf -Dt "${pkgdir}/media/fat/_Arcade/cores/"
   install ${srcdir}/${_gitfolder}/releases/*.mra -Dt "${pkgdir}/media/fat/_Arcade/_NeoGeo MVS"
 
   mkdir -p "${pkgdir}/media/fat/_Arcade/_NeoGeo MVS/_Alternatives"
