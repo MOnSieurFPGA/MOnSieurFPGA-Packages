@@ -99,23 +99,11 @@ jobs:
         makepkg -f
         cp MOnSieur-NeoGeoMVS* ../MOnSieurFPGA-Packages
         cd ../
-        mkdir MOnSieur-ToaplanV1
-        cd MOnSieur-ToaplanV1
-        wget https://raw.githubusercontent.com/MOnSieurFPGA/MOnSieurFPGA-Packages/main/armv7h/MOnSieur-ToaplanV1/PKGBUILD
+        mkdir MOnSieur-Coin-Op_Collection
+        cd MOnSieur-Coin-Op_Collection
+        wget https://raw.githubusercontent.com/MOnSieurFPGA/MOnSieurFPGA-Packages/main/armv7h/MOnSieur-Coin-Op_Collection/PKGBUILD
         makepkg -f
-        cp MOnSieur-ToaplanV1* ../MOnSieurFPGA-Packages
-        cd ../
-        mkdir MOnSieur-Nichibutsu-68000
-        cd MOnSieur-Nichibutsu-68000
-        wget https://raw.githubusercontent.com/MOnSieurFPGA/MOnSieurFPGA-Packages/main/armv7h/MOnSieur-Nichibutsu-68000/PKGBUILD
-        makepkg -f
-        cp MOnSieur-Nichibutsu-68000* ../MOnSieurFPGA-Packages
-        cd ../
-        mkdir MOnSieur-Nichibutsu-68000-2
-        cd MOnSieur-Nichibutsu-68000-2
-        wget https://raw.githubusercontent.com/MOnSieurFPGA/MOnSieurFPGA-Packages/main/armv7h/MOnSieur-Nichibutsu-68000-2/PKGBUILD
-        makepkg -f
-        cp MOnSieur-Nichibutsu-68000-2* ../MOnSieurFPGA-Packages
+        cp MOnSieur-Coin-Op_Collection* ../MOnSieurFPGA-Packages
         cd ../
         mkdir JTFPGA-MiSTer
         cd JTFPGA-MiSTer
@@ -142,9 +130,7 @@ jobs:
         rm -rf MiSTer-Devel-Computer
         rm -rf MiSTer-Devel-Console
         rm -rf MOnSieur-NeoGeoMVS
-        rm -rf MOnSieur-ToaplanV1
-        rm -rf MOnSieur-Nichibutsu-68000
-        rm -rf MOnSieur-Nichibutsu-68000-2
+        rm -rf MOnSieur-Coin-Op_Collection
         rm -rf JTFPGA-MiSTer
         cd MOnSieurFPGA-Packages
         gh auth login --with-token < ${HOME}/.jack_cates
