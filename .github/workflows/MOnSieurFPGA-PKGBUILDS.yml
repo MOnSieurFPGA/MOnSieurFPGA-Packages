@@ -135,7 +135,7 @@ jobs:
         cd MOnSieurFPGA-Packages
         gh auth login --with-token < ${HOME}/.jack_cates
         gh release delete Packages --yes
-        gh release create Packages
+        gh release create Packages -t "MOnSieurFPGA"
         gh release upload Packages MiSTer* --clobber
         gh release upload Packages MOnSieur* --clobber
         gh release upload Packages JTFPGA* --clobber
