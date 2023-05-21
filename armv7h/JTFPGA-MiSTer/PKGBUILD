@@ -12,11 +12,7 @@ sha256sums=('SKIP')
 _gitfolder="jtpremium"
 
 pkgver() {
-  cd "${srcdir}/${_gitfolder}"
-  # there are no tags in this repo, so let's just make make one for the first commit
-  git tag -f "firstcommit" 387130e2a2cf3d77b0b231f749242b57da02a544
-  # and then use number of commits as a version
-  git describe --tags --match firstcommit | sed 's/firstcommit.//g;s/-/./g'
+  date +%F | tr -d '-'
 }
 
 package() {
