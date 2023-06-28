@@ -60,6 +60,8 @@ jobs:
         mkdir MiSTer-Linux-Addons
         cd MiSTer-Linux-Addons
         wget https://raw.githubusercontent.com/MOnSieurFPGA/MOnSieurFPGA-Packages/main/armv7h/MiSTer-Linux-Addons/PKGBUILD
+        wget https://raw.githubusercontent.com/MOnSieurFPGA/MOnSieurFPGA-Packages/main/armv7h/MiSTer-Linux-Addons/MidiLink.INI
+        wget https://raw.githubusercontent.com/MOnSieurFPGA/MOnSieurFPGA-Packages/main/armv7h/MiSTer-Linux-Addons/ppp_options
         makepkg -f
         cp MiSTer-Linux-Addons* ../MOnSieurFPGA-Packages
         cd ../
