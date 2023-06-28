@@ -21,9 +21,10 @@ package() {
   tar xpvf addon.tar
   mkdir -p "${pkgdir}"/usr/bin
   mkdir -p "${pkgdir}"/usr/sbin
+  mkdir -p "${pkgdir}"/media/fat/linux/
   cp -r ${srcdir}/${_gitfolder}/usr/bin/* "${pkgdir}"/usr/bin/
   cp -r ${srcdir}/${_gitfolder}/usr/sbin/* "${pkgdir}"/usr/bin/
-  cp MidiLink.INI /media/fat/linux/
-  cp ppp_options /media/fat/linux/
+  cp MidiLink.INI "${pkgdir}"/media/fat/linux/MidiLink.INI
+  cp ppp_options "${pkgdir}"/media/fat/linux/ppp_options
 
 }
