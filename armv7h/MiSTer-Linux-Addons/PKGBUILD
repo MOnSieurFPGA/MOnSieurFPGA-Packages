@@ -7,8 +7,10 @@ pkgdesc="MiSTerFPGA Linux Addon Utils"
 arch=('any')
 url='https://github.com/MiSTer-devel/Linux_Image_creator_MiSTer'
 license=('GPL3')
-source=('https://raw.githubusercontent.com/MiSTer-devel/Linux_Image_creator_MiSTer/master/addon.tar')
-sha256sums=('SKIP')
+source=('https://raw.githubusercontent.com/MiSTer-devel/Linux_Image_creator_MiSTer/master/addon.tar'
+'MidiLink.INI'
+'ppp_options')
+sha256sums=('SKIP' 'SKIP' 'SKIP')
 
 pkgver() {
   date +%F | tr -d '-'
@@ -20,6 +22,8 @@ package() {
   mkdir -p "${pkgdir}"/usr/bin
   mkdir -p "${pkgdir}"/usr/sbin
   cp -r ${srcdir}/${_gitfolder}/usr/bin/* "${pkgdir}"/usr/bin/
-  cp -r ${srcdir}/${_gitfolder}/usr/sbin/* "${pkgdir}"/usr/sbin/
+  cp -r ${srcdir}/${_gitfolder}/usr/sbin/* "${pkgdir}"/usr/bin/
+  cp MidiLink.ini /media/fat/linux/
+  cp ppp_options /media/fat/linux/
 
 }
