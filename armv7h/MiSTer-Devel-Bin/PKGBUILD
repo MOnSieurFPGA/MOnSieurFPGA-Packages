@@ -10,7 +10,7 @@
 buildarch=4
 
 pkgname=MiSTer-Devel-Bin
-pkgver=20230526
+pkgver=20230703
 pkgrel=1
 pkgdesc="Userspace binary that manages MiSTer on the ARM side, prebuilt"
 arch=('any')
@@ -21,7 +21,7 @@ license=('GPL')
 optdepends=('MiSTer-Linux-Addons' 'MiSTer-Devel-Menu' 'MiSTer-Devel-Support')
 source=("https://github.com/MiSTer-devel/Main_MiSTer/raw/master/releases/MiSTer_${pkgver}"
         'MiSTer.service')
-sha256sums=('234465c41f3e000cb9be972072dd053415e965574a6b2544af94c0227d6ecdb3'
+sha256sums=('SKIP'
             '6f9a9a14420078c5fc5afeab364aba4a0be55992e95b897b913ed76e4fbe2971')
 
 package() {
