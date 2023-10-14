@@ -1,0 +1,54 @@
+buildarch=4
+
+pkgname=MiSTer-Extensions
+pkgver=20231014
+pkgrel=1
+pkgdesc="Collection of extensions and utilities for the MiSTer system"
+arch=('armv7h')
+url='https://github.com/wizzomafizzo/mrext'
+license=('GPL3')
+source=('git+https://github.com/wizzomafizzo/mrext.git')
+sha256sums=('SKIP')
+depends=('python')
+makedepends=('go' 'mage' 'npm')
+
+_gitfolder="mrext"
+_clientgitsource="https://github.com/wizzomafizzo/mrext-client.git"
+_clientgitfolder="mrext-client"
+
+pkgver() {
+  date +%F | tr -d '-'
+}
+
+package() {
+  mkdir -p "${pkgdir}/media/fat/Scripts"
+
+  # remote client build
+  [ ! -d "${srcdir}/${_clientgitfolder}" ] && \
+    git clone ${_clientgitsource} ${srcdir}/${_clientgitfolder}
+  cd ${srcdir}/${_clientgitfolder}
+  npm install
+  npm run build
+
+  # copy client files
+  cp -r ${srcdir}/${_clientgitfolder}/build ${srcdir}/${_gitfolder}/cmd/remote/_client
+
+  # mrext build
+  cd ${srcdir}/${_gitfolder}
+  mage build lastplayed
+  mage build launchseq
+  mage build launchsync
+  mage build nfc
+  mage build playlog
+  mage build remote
+  mage build search
+
+  # install apps
+  install ${srcdir}/${_gitfolder}/_bin/linux_arm/lastplayed.sh -Dt "${pkgdir}/media/fat/Scripts"
+  install ${srcdir}/${_gitfolder}/_bin/linux_arm/launchseq.sh -Dt "${pkgdir}/media/fat/Scripts"
+  install ${srcdir}/${_gitfolder}/_bin/linux_arm/launchsync.sh -Dt "${pkgdir}/media/fat/Scripts"
+  install ${srcdir}/${_gitfolder}/_bin/linux_arm/nfc.sh -Dt "${pkgdir}/media/fat/Scripts"
+  install ${srcdir}/${_gitfolder}/_bin/linux_arm/playlog.sh -Dt "${pkgdir}/media/fat/Scripts"
+  install ${srcdir}/${_gitfolder}/_bin/linux_arm/remote.sh -Dt "${pkgdir}/media/fat/Scripts"
+  install ${srcdir}/${_gitfolder}/_bin/linux_arm/search.sh -Dt "${pkgdir}/media/fat/Scripts"
+}
