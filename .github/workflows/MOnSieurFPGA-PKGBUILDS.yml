@@ -112,6 +112,12 @@ jobs:
         wget https://raw.githubusercontent.com/MOnSieurFPGA/MOnSieurFPGA-Packages/main/armv7h/JTFPGA-MiSTer/PKGBUILD
         makepkg -f
         cp JTFPGA-MiSTer* ../MOnSieurFPGA-Packages
+        cd ../
+        mkdir MiSTer-Devel-Mister64-Dev
+        cd MiSTer-Devel-Mister64-Dev
+        wget https://raw.githubusercontent.com/MOnSieurFPGA/MOnSieurFPGA-Packages/main/armv7h/MiSTer-Devel-Mister64-Dev/PKGBUILD
+        makepkg -f
+        cp MiSTer-Devel-Mister64-Dev* ../MOnSieurFPGA-Packages
         cd ../MOnSieurFPGA-Packages
         repo-add monsieur.db.tar.gz *.tar.gz
         rm monsieur.db
@@ -134,6 +140,7 @@ jobs:
         rm -rf MOnSieur-NeoGeoMVS
         rm -rf MOnSieur-Coin-Op_Collection
         rm -rf JTFPGA-MiSTer
+        rm -rf MiSTer-Devel-Mister64-Dev
         cd MOnSieurFPGA-Packages
         gh auth login --with-token < ${HOME}/.jack_cates
         gh release delete Packages --yes
