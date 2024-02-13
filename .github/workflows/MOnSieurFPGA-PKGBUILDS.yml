@@ -2,7 +2,7 @@ name: MOnSiuerFPGA Package Database
 
 on:
   schedule:
-  - cron: "0 */4 * * *"
+  - cron: "18 2 * * *"
   workflow_dispatch:
 
 jobs:
