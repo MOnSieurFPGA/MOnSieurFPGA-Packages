@@ -1,0 +1,27 @@
+buildarch=4
+
+pkgname=MiSTer-Devel-Mister64-Dev
+pkgver=1.5dc54f2
+pkgrel=1
+pkgdesc="Dev release of Mister64 core by Robert Peip"
+arch=('any')
+url='https://github.com/RobertPeip/Mister64'
+license=('GPL3')
+source=('https://github.com/RobertPeip/Mister64/raw/db/db.json')
+sha256sums=('SKIP')
+makedepends=('jq', 'wget')
+
+pkgver() {
+  date +%F | tr -d '-'
+}
+
+package() {
+  mkdir -p "${pkgdir}"/media/fat/_Console/
+  mkdir -p "${pkgdir}"/media/fat/games/N64/
+
+  # parse the files from the n64_dev downloader repo and download them all
+  cat "${srcdir}"/db.json | jq ".files[] | .url" | xargs wget -P "${srcdir}"
+
+  cp "${srcdir}"/*.rbf "${pkgdir}"/media/fat/_Console/
+  cp "${srcdir}"/N64-database.txt "${pkgdir}"/media/fat/games/N64/
+}
