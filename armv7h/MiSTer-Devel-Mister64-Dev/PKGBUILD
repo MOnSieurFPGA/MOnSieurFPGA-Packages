@@ -9,7 +9,7 @@ url='https://github.com/RobertPeip/Mister64'
 license=('GPL3')
 source=('https://github.com/RobertPeip/Mister64/raw/db/db.json')
 sha256sums=('SKIP')
-makedepends=('jq', 'wget')
+makedepends=('jq' 'wget')
 
 pkgver() {
   date +%F | tr -d '-'
