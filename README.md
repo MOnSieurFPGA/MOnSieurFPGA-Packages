@@ -5,7 +5,7 @@
 
 ## Package List
 
-- MOnSieurFPGA packages are fully automated. Every four hours, the most current binaries are pulled and new packages are pushed to [**Releases**](https://github.com/MOnSieurFPGA/MOnSieurFPGA-Packages/releases/tag/Packages). For detailed information on packages click the **source links** below.
+- MOnSieurFPGA packages are fully automated. Every day, the most current binaries are pulled and new packages are pushed to [**Releases**](https://github.com/MOnSieurFPGA/MOnSieurFPGA-Packages/releases/tag/Packages). For detailed information on packages click the **source links** below.
 
 - After initial installation, run **`sudo pacman -Sy "pkgname" --overwrite "*"`** to install/update individual packages listed below. 
 
@@ -21,6 +21,7 @@
 [**MiSTer-Devel-Arcade**](https://github.com/MOnSieurFPGA/MOnSieurFPGA-Packages/releases/tag/Packages) | [**MiSTer-devel/Distribution_MiSTer/_Arcade**](https://github.com/MOnSieurFPGA/MOnSieurFPGA-Packages/blob/main/armv7h/MiSTer-Devel-Arcade/PKGBUILD) | [**theypsilon**](https://github.com/theypsilon) | MiSTerFPGA distribution package. | No |
 [**MiSTer-Devel-Computer**](https://github.com/MOnSieurFPGA/MOnSieurFPGA-Packages/releases/tag/Packages) | [**MiSTer-devel/Distribution_MiSTer/_Computer**](https://github.com/MOnSieurFPGA/MOnSieurFPGA-Packages/blob/main/armv7h/MiSTer-Devel-Computer/PKGBUILD) | [**theypsilon**](https://github.com/theypsilon) | MiSTerFPGA distribution package. | No |
 [**MiSTer-Devel-Console**](https://github.com/MOnSieurFPGA/MOnSieurFPGA-Packages/releases/tag/Packages) | [**MiSTer-devel/Distribution_MiSTer/_Console**](https://github.com/MOnSieurFPGA/MOnSieurFPGA-Packages/blob/main/armv7h/MiSTer-Devel-Console/PKGBUILD) | [**theypsilon**](https://github.com/theypsilon) | MiSTerFPGA distribution package. | No |
+[**MiSTer-Devel-Mister64-Dev**](https://github.com/MOnSieurFPGA/MOnSieurFPGA-Packages/releases/tag/Packages) | [**RobertPeip/Mister64**](https://github.com/MOnSieurFPGA/MOnSieurFPGA-Packages/blob/main/armv7h/MiSTer-Devel-Mister64-Dev/PKGBUILD) | [**theypsilon**](https://github.com/theypsilon) | Most recent builds of **Mister64** core by [**Robert Peip**](https://github.com/RobertPeip). | No |
 [**MOnSieur-NeoGeoMVS**](https://github.com/MOnSieurFPGA/MOnSieurFPGA-Packages/releases/tag/Packages) | [**MOnSieur-NeoGeoMVS**](https://github.com/MOnSieurFPGA/MOnSieurFPGA-Packages/blob/main/armv7h/MOnSieur-NeoGeoMVS/PKGBUILD) | MOnSieurFPGA | Most recent build of **NeoGeo MVS** by [**blackwine**](https://github.com/blackwine)/[**furrtek**](https://github.com/furrtek). | No |
 [**MOnSieur-Coin-Op_Collection**](https://github.com/MOnSieurFPGA/MOnSieurFPGA-Packages/releases/tag/Packages) | [**MOnSieur-Coin-Op_Collection**](https://github.com/MOnSieurFPGA/MOnSieurFPGA-Packages/blob/main/armv7h/Coin-Op_Collection/PKGBUILD) | MOnSieurFPGA | Most recent builds of **Arcade Cores** by [**va7deo**](https://github.com/va7deo)/[**atrac17**](https://github.com/atrac17). | No |
 [**JTFPGA-MiSTer**](https://github.com/MOnSieurFPGA/MOnSieurFPGA-Packages/releases/tag/Packages) | [**jotego/jtpremium**](https://github.com/MOnSieurFPGA/MOnSieurFPGA-Packages/blob/main/armv7h/JTFPGA-MiSTer/PKGBUILD) | [**theypsilon**](https://github.com/theypsilon) | Most recent **JTFPGA** cores for MiSTerFPGA by [**jotego**](https://github.com/jotego). | No |
